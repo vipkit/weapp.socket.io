@@ -1,4 +1,6 @@
 import commonjs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel';
+
 import {terser} from 'rollup-plugin-terser';
 
 
@@ -8,6 +10,10 @@ export default ({
       file: 'dist/weapp.socket.io.js',
       format: 'es'
     }],
-    plugins: [commonjs(),terser() ],
+    plugins: [
+        commonjs(),
+        terser(),
+        babel({ babelHelpers: 'bundled' }),
+     ],
 
   });
