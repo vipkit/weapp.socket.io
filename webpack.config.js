@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'lib'),
     filename: 'weapp.socket.io.js',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs',
   },
   plugins: [
     new webpack.NormalModuleReplacementPlugin(/debug/, process.cwd() + '/support/noop.js'),
